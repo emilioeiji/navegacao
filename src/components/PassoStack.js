@@ -3,12 +3,19 @@ import { View, Text, Button } from 'react-native'
 
 export default props => (
     <View style={{ flex: 1 }}>
-        <View>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
             { props.avancar 
                 ? <Button 
                     title='Avançar' 
                     onPress={() => { 
                         props.navigation.navigate(props.avancar)}} 
+                    /> 
+                : false }
+            { props.voltar 
+                ? <Button 
+                    title='Voltar' 
+                    onPress={() => { 
+                        props.navigation.goBack(props.voltar)}} 
                     /> 
                 : false }
         </View>
